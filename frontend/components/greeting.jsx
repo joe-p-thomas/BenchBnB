@@ -5,10 +5,12 @@ import { Link } from 'react-router';
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+
+    this.loggedIn = this.loggedIn.bind(this);
   }
 
   loggedIn() {
-    return !!this.props.curentUser;
+    return !!this.props.currentUser;
   }
 
   render() {
@@ -16,7 +18,7 @@ class Greeting extends React.Component {
       return (
         <div>
           <h2>Welcome {this.props.currentUser.username}!</h2>
-          <button onClick={this.props.logOut()}>log out</button>
+          <button onClick={this.props.logout}>log out</button>
         </div>
       );
     } else {
